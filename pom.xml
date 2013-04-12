@@ -6,27 +6,27 @@
 
     <groupId>org.leochen.maven</groupId>
     <artifactId>app-pom</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
-
 
     <properties>
         <javamail.version>1.4.5</javamail.version>
 
-        <springframework.version>3.2.0.RELEASE</springframework.version>
-        <springwebflow.version>2.3.1.RELEASE</springwebflow.version>
+        <springframework.version>3.2.2.RELEASE</springframework.version>
+        <springwebflow.version>2.3.2.RELEASE</springwebflow.version>
         <springsecurity.version>3.1.3.RELEASE</springsecurity.version>
 
         <slf4j.version>1.7.2</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-        <mysql-connector-java.version>5.1.22</mysql-connector-java.version>
+        <mysql-connector-java.version>5.1.23</mysql-connector-java.version>
         <aspectj.version>1.7.1</aspectj.version>
         <boneCP.version>0.7.1.RELEASE</boneCP.version>
-        <hibernate.version>4.1.9.Final</hibernate.version>
-        <mybatis.version>3.1.1</mybatis.version>
+        <hibernate.version>4.1.10.Final</hibernate.version>
+        <mybatis.version>3.2.0</mybatis.version>
+        <mybatis-sprnig.version>1.2.0</mybatis-sprnig.version>
         <sitemesh.version>2.4.2</sitemesh.version>
         <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
-        <javassist.version>3.16.1-GA</javassist.version>
+        <javassist.version>3.17.1-GA</javassist.version>
         <cglib.version>2.2.2</cglib.version>
         <c3p0.version>0.9.1.2</c3p0.version>
 
@@ -38,21 +38,24 @@
 
         <joda-time.version>2.1</joda-time.version>
         <joda-time-jsptag.version>1.1.1</joda-time-jsptag.version>
-        <ehcache.version>2.6.2</ehcache.version>
+        <ehcache.version>2.6.5</ehcache.version>
         <jackson.version>1.9.11</jackson.version>
         <jackson2.version>2.1.1</jackson2.version>
         <gson.version>2.2.2</gson.version>
         <spymemcached.version>2.8.1</spymemcached.version>
-        <xmemcached.version>1.3.8</xmemcached.version>
-        <spring-data-jpa.version>1.2.0.RELEASE</spring-data-jpa.version>
-        <spring-data-redis.version>1.0.2.RELEASE</spring-data-redis.version>
-        <spring-data-mongodb.version>1.1.1.RELEASE</spring-data-mongodb.version>
-        <mongo-java-driver.version>2.8.0</mongo-java-driver.version>
-        <struts2.version>2.3.4.1</struts2.version>
-        <poi.version>3.8</poi.version>
+        <xmemcached.version>1.4.1</xmemcached.version>
+
+        <spring-data-commons.version>1.5.0.RELEASE</spring-data-commons.version>
+        <spring-data-jpa.version>1.3.0.RELEASE</spring-data-jpa.version>
+        <spring-data-redis.version>1.0.3.RELEASE</spring-data-redis.version>
+        <spring-data-mongodb.version>1.2.0.RELEASE</spring-data-mongodb.version>
+        <mongo-java-driver.version>2.10.1</mongo-java-driver.version>
+
+        <struts2.version>2.3.8</struts2.version>
+        <poi.version>3.9</poi.version>
         <shiro.version>1.2.1</shiro.version>
-        <jsoup.version>1.7.1</jsoup.version>
-        <httpclient.version>4.2.2</httpclient.version>
+        <jsoup.version>1.7.2</jsoup.version>
+        <httpclient.version>4.2.3</httpclient.version>
         <velocity.version>1.7</velocity.version>
         <freemarker.version>2.3.19</freemarker.version>
         <quartz.version>2.1.6</quartz.version>
@@ -66,7 +69,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <repository.host>123.125.219.63</repository.host>
+        <repository.host>localhost</repository.host>
         <repository.port>8081</repository.port>
     </properties>
 
@@ -79,11 +82,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
+
 
     <dependencyManagement>
         <dependencies>
-            <!-- Servlet api -->
+            <!-- Servlet 2.5 api -->
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
@@ -98,6 +103,20 @@
             </dependency>
 
 
+            <!-- Servlet 3.0 api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1-b01</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>2.2.1</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- JSTL1.2 -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -111,6 +130,20 @@
                 <groupId>com.sun.mail</groupId>
                 <artifactId>javax.mail</artifactId>
                 <version>${javamail.version}</version>
+            </dependency>
+
+            <!-- JSR 250 -->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>jsr250-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <!-- JSR 303 -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>1.0.0.GA</version>
             </dependency>
 
 
@@ -150,6 +183,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
                 <version>${springframework.version}</version>
             </dependency>
             <dependency>
@@ -199,7 +237,42 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-config</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-acl</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-ldap</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-cas</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-openid</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-remoting</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-crypto</artifactId>
                 <version>${springsecurity.version}</version>
             </dependency>
 
@@ -268,6 +341,13 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+
+            <!-- mybatis-spring -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-sprnig.version}</version>
             </dependency>
 
 
@@ -539,6 +619,13 @@
                 <version>${xmemcached.version}</version>
             </dependency>
 
+            <!-- Spring Data Commons -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons</artifactId>
+                <version>${spring-data-commons.version}</version>
+            </dependency>
+
             <!-- Spring Data JPA -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
@@ -553,13 +640,6 @@
                 <version>${spring-data-redis.version}</version>
             </dependency>
 
-            <!-- mongo java driver -->
-            <dependency>
-                <groupId>org.mongodb</groupId>
-                <artifactId>mongo-java-driver</artifactId>
-                <version>${mongo-java-driver.version}</version>
-            </dependency>
-
             <!-- Spring Data Mongodb -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
@@ -572,6 +652,13 @@
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb-log4j</artifactId>
                 <version>${spring-data-mongodb.version}</version>
+            </dependency>
+
+            <!-- mongo java driver -->
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>${mongo-java-driver.version}</version>
             </dependency>
 
 
@@ -612,7 +699,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>3.0</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${jdkVersion}</source>
@@ -632,7 +719,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12.4</version>
+                <version>2.13</version>
             </plugin>
 
             <plugin>
@@ -657,7 +744,7 @@
                 <plugin>
                     <groupId>org.mortbay.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
-                    <version>8.1.0.v20120127</version>
+                    <version>8.1.5.v20120716</version>
                     <configuration>
                         <scanIntervalSeconds>10</scanIntervalSeconds>
                         <webApp>
@@ -699,7 +786,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>2.10</version>
                 <configuration>
                     <configLocation>config/maven_checks.xml</configLocation>
                 </configuration>
@@ -716,7 +803,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.12.4</version>
+                <version>2.13</version>
             </plugin>
 
             <plugin>
@@ -757,4 +844,58 @@
             <url>http://${repository.host}:${repository.port}/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>cargo-tomcat7-deploy</id>
+
+            <properties>
+                <hostname>localhost</hostname>
+                <servlet.port>8080</servlet.port>
+                <username>clong</username>
+                <password>110</password>
+            </properties>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.cargo</groupId>
+                        <artifactId>cargo-maven2-plugin</artifactId>
+                        <version>1.3.3</version>
+                        <configuration>
+                            <container>
+                                <containerId>tomcat7x</containerId>
+                                <type>remote</type>
+                            </container>
+                            <configuration>
+                                <type>runtime</type>
+                                <properties>
+                                    <cargo.hostname>${hostname}</cargo.hostname>
+                                    <cargo.servlet.port>${servlet.port}</cargo.servlet.port>
+                                    <cargo.remote.username>${username}</cargo.remote.username>
+                                    <cargo.remote.password>${password}</cargo.remote.password>
+                                    <cargo.tomcat.manager.url>
+                                        http://${hostname}:${servlet.port}/manager/html
+                                    </cargo.tomcat.manager.url>
+                                </properties>
+                            </configuration>
+                            <deployer>
+                                <deployables>
+                                    <deployable>
+                                        <groupId>${project.groupId}</groupId>
+                                        <artifactId>${project.artifactId}</artifactId>
+                                        <type>war</type>
+                                        <pingURL>http://${hostname}:${servlet.port}</pingURL>
+                                        <properties>
+                                            <context>${project.artifactId}</context>
+                                        </properties>
+                                    </deployable>
+                                </deployables>
+                            </deployer>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
