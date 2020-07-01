@@ -18,7 +18,7 @@
 
         <slf4j.version>1.7.2</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-        <mysql-connector-java.version>5.1.23</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
         <aspectj.version>1.7.1</aspectj.version>
         <boneCP.version>0.7.1.RELEASE</boneCP.version>
         <hibernate.version>4.1.10.Final</hibernate.version>
