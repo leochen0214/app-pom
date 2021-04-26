@@ -34,7 +34,7 @@
         <commons-collections.version>3.2.1</commons-collections.version>
         <commons-beanutils.version>1.8.3</commons-beanutils.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
-        <commons-io.version>2.4</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
 
         <joda-time.version>2.1</joda-time.version>
         <joda-time-jsptag.version>1.1.1</joda-time-jsptag.version>
