@@ -61,7 +61,7 @@
         <quartz.version>2.1.6</quartz.version>
 
         <lucene.version>3.6.1</lucene.version>
-        <solr.version>3.6.1</solr.version>
+        <solr.version>8.8.2</solr.version>
 
         <junit.version>4.11</junit.version>
 
