@@ -40,7 +40,7 @@
         <joda-time-jsptag.version>1.1.1</joda-time-jsptag.version>
         <ehcache.version>2.6.5</ehcache.version>
         <jackson.version>1.9.11</jackson.version>
-        <jackson2.version>2.1.1</jackson2.version>
+        <jackson2.version>2.9.10.8</jackson2.version>
         <gson.version>2.2.2</gson.version>
         <spymemcached.version>2.8.1</spymemcached.version>
         <xmemcached.version>1.4.1</xmemcached.version>
