@@ -21,7 +21,7 @@
         <mysql-connector-java.version>5.1.23</mysql-connector-java.version>
         <aspectj.version>1.7.1</aspectj.version>
         <boneCP.version>0.7.1.RELEASE</boneCP.version>
-        <hibernate.version>4.1.10.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <mybatis.version>3.2.0</mybatis.version>
         <mybatis-sprnig.version>1.2.0</mybatis-sprnig.version>
         <sitemesh.version>2.4.2</sitemesh.version>
