@@ -51,7 +51,7 @@
         <spring-data-mongodb.version>1.2.0.RELEASE</spring-data-mongodb.version>
         <mongo-java-driver.version>2.10.1</mongo-java-driver.version>
 
-        <struts2.version>2.3.8</struts2.version>
+        <struts2.version>2.5.26</struts2.version>
         <poi.version>3.9</poi.version>
         <shiro.version>1.2.1</shiro.version>
         <jsoup.version>1.7.2</jsoup.version>
