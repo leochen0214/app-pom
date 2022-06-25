@@ -48,7 +48,7 @@
         <spring-data-commons.version>1.5.0.RELEASE</spring-data-commons.version>
         <spring-data-jpa.version>1.3.0.RELEASE</spring-data-jpa.version>
         <spring-data-redis.version>1.0.3.RELEASE</spring-data-redis.version>
-        <spring-data-mongodb.version>1.2.0.RELEASE</spring-data-mongodb.version>
+        <spring-data-mongodb.version>3.3.5</spring-data-mongodb.version>
         <mongo-java-driver.version>2.10.1</mongo-java-driver.version>
 
         <struts2.version>2.3.8</struts2.version>
