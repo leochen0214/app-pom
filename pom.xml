@@ -25,7 +25,7 @@
         <mybatis.version>3.2.0</mybatis.version>
         <mybatis-sprnig.version>1.2.0</mybatis-sprnig.version>
         <sitemesh.version>2.4.2</sitemesh.version>
-        <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.0.23.Final</hibernate-validator.version>
         <javassist.version>3.17.1-GA</javassist.version>
         <cglib.version>2.2.2</cglib.version>
         <c3p0.version>0.9.1.2</c3p0.version>
